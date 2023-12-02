@@ -1,2 +1,2 @@
-# AOC_2023
-Advent of Code 2023
+# Advent of Code 2023
+Solving the challenges in C
