@@ -6,29 +6,27 @@
 
 typedef struct s_map
 {
-	int		width;
-	int		height;
-	char	**map;
-  int   count;
+	int width;
+	int height;
+	char  **map;
+  int count;
 }	t_map;
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*join;
-	size_t	i;
-	size_t	j;
+  char	*join;
+  size_t	i = -1;
+  size_t	j = -1;
 
-	i = -1;
-	j = -1;
-	join = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
-	if (!join)
-		return (NULL);
-	while (s1[++i])
-		join[i] = s1[i];
-	while (s2[++j])
-		join[j + i] = s2[j];
-	join[i + j] = '\0';
-	return (join);
+  join = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
+  if (!join)
+    return (NULL);
+  while (s1[++i])
+    join[i] = s1[i];
+  while (s2[++j])
+    join[j + i] = s2[j];
+  join[i + j] = '\0';
+  return (join);
 }
 
 void  create_map(t_map *data)
@@ -61,6 +59,7 @@ void  check_numbers(t_map *data)
   int number = 0;
   char *snumber;
   bool  valid;
+
   while (++i < data->height + 1)
   {
     j = 0;
@@ -90,12 +89,12 @@ void  check_numbers(t_map *data)
 
 int	main(void)
 {	
-	FILE    *fp = fopen("input.aoc", "r");
+	FILE  *fp = fopen("input.aoc", "r");
 	size_t  len = 0;
-	char    *line = NULL;
-  t_map   data;
-	int		  i = 0;
-  int     j = 0;
+	char  *line = NULL;
+  t_map data;
+	int i = 0;
+  int j = 0;
 
   data.width = 0;
   data.height = 0;
@@ -115,6 +114,6 @@ int	main(void)
   }
   check_numbers(&data);
   fclose(fp);
-	free(line);
-	printf("Sum: %d\n", data.count);
+  free(line);
+  printf("Sum: %d\n", data.count);
 }
