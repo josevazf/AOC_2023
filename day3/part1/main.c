@@ -6,17 +6,17 @@
 
 typedef struct s_map
 {
-	int width;
-	int height;
-	char  **map;
+  int width;
+  int height;
+  char **map;
   int count;
-}	t_map;
+} t_map;
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-  char	*join;
-  size_t	i = -1;
-  size_t	j = -1;
+  char *join;
+  size_t i = -1;
+  size_t j = -1;
 
   join = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
   if (!join)
@@ -58,7 +58,7 @@ void  check_numbers(t_map *data)
   int j = 0;
   int number = 0;
   char *snumber;
-  bool  valid;
+  bool valid;
 
   while (++i < data->height + 1)
   {
@@ -89,24 +89,24 @@ void  check_numbers(t_map *data)
 
 int	main(void)
 {	
-	FILE  *fp = fopen("input.aoc", "r");
-	size_t  len = 0;
-	char  *line = NULL;
+  FILE *fp = fopen("input.aoc", "r");
+  size_t len = 0;
+  char *line = NULL;
   t_map data;
-	int i = 0;
+  int i = 0;
   int j = 0;
 
   data.width = 0;
   data.height = 0;
   data.count = 0;
-	while (getline(&line, &len, fp) != -1 && ++i)
+  while (getline(&line, &len, fp) != -1 && ++i)
     data.width = strlen(line);
   data.height = i;
 	fclose(fp);
   create_map(&data);
   i = 0;
   fp = fopen("input.aoc", "r");
-	while (getline(&line, &len, fp) != -1 && ++j)
+  while (getline(&line, &len, fp) != -1 && ++j)
   {
     i = 0;
     while (++i < data.width + 1)
