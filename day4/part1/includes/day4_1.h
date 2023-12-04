@@ -8,7 +8,4 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-// pipex_main.c
-
-
 #endif
