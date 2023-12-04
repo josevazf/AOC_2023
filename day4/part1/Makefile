@@ -22,8 +22,7 @@ OBJS			= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 #default target
 all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
-	echo "Finished!"
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) && ./$(NAME)
 
 #create .o files
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
@@ -33,6 +32,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 $(LIBFT):
 	echo "Compiling necessary libs..."
 	$(MAKE) $(MK_FLAG) -C $(LIBFT_DIR)
+	echo "Finished!"
 
 #remove .o files
 clean:

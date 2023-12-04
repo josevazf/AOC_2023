@@ -2,33 +2,47 @@
 
 int	main(void)
 {	
-	FILE *fp = fopen("sample.aoc", "r");
+	FILE *fp = fopen("input.aoc", "r");
 	size_t len = 0;
 	char *line = NULL;
   char **game;
-  //int win_nbrs;
-  //int  *my_nbrs = NULL;
+  char **win;
+  char **play;
 	int		i;
   int   j;
 	int		number;
-	//int		multi = 1;
-	int		count = 0;
+	int		g_count;
+  int   f_count = 0;
 
 	while (getline(&line, &len, fp) != -1)
 	{
 		number = 0;
+    g_count = 0;
 		i = -1;
 		while (line[i] != ':')
 			i++;
-    j = -1;
-    game = ft_split(line + i + 1, ' ');
-    while (!ft_strncmp(game[++j], "|", 1))
+    game = ft_split(line + i + 1, '|');
+    win = ft_split(game[0], ' ');
+    play = ft_split(game[1], ' ');
+    i = -1;
+    while (play[++i])
     {
-      number = atoi(game[0]);
-      printf("%d ", number);
+      j = -1;
+      number = atoi(play[i]);
+      while (win[++j])
+      {
+        if (atoi(win[j]) == number && g_count == 0)
+          g_count++;
+        else if (atoi(win[j]) == number)
+          g_count *= 2;
+      }
     }
+    f_count += g_count;
 	}
 	fclose(fp);
 	free(line);
-	printf("Sum: %d\n", count);
+  ft_free_smatrix(game);
+  ft_free_smatrix(win);
+  ft_free_smatrix(play);
+	printf("Sum: %d\n", f_count);
 }
