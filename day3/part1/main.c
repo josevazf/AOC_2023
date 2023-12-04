@@ -96,9 +96,6 @@ int	main(void)
   int i = 0;
   int j = 0;
 
-  data.width = 0;
-  data.height = 0;
-  data.count = 0;
   while (getline(&line, &len, fp) != -1 && ++i)
     data.width = strlen(line);
   data.height = i;
