@@ -22,7 +22,7 @@ OBJS			= $(SRCS:%.c=$(OBJS_DIR)/%.o)
 #default target
 all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME) && ./$(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 #create .o files
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
