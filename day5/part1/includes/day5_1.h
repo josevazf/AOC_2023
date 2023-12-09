@@ -1,5 +1,5 @@
-#ifndef DAY4_1_H
-# define DAY4_1_H
+#ifndef DAY5_1_H
+# define DAY5_1_H
 
 #include "../../../libft/libft.h"
 #include <stdio.h>
