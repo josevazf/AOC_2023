@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 09:01:33 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/12/07 16:13:15 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:12:33 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*ft_strposi(char const *s, char c, int pos)
 	return (subs);
 }
 
-/* Returns an array of integers obtained by splitting ’s’ using the
+/* Returns an array of longs obtained by splitting ’s’ using the
    character ’c’ as a delimiter. */
 long	*ft_split_longs(char const *s, char c)
 {
@@ -43,7 +43,7 @@ long	*ft_split_longs(char const *s, char c)
 			i++;
 		else
 		{
-			out[++j] = (long)ft_atoi(ft_strposi(s, c, i));
+			out[++j] = ft_atol(ft_strposi(s, c, i));
 			i = i + ft_nbrlen(out[j]);
 		}
 	}

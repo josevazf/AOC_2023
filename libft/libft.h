@@ -6,7 +6,7 @@
 /*   By: jrocha-v <jrocha-v@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:26:26 by jrocha-v          #+#    #+#             */
-/*   Updated: 2023/12/07 16:12:22 by jrocha-v         ###   ########.fr       */
+/*   Updated: 2023/12/09 23:08:21 by jrocha-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int		ft_checkext(char *str, char *ext);
 int		ft_nbrlen(long n);
 int   *ft_split_ints(char const *s, char c);
 long  *ft_split_longs(char const *s, char c);
+long	ft_atol(const char *nstr);
 
 // List manipulation
 t_list	*ft_lstnew(void *content);
