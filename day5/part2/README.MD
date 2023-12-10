@@ -104,4 +104,4 @@ So, the lowest location number in this example is `35`.
 
 What is the lowest location number that corresponds to any of the initial seed numbers?
 
-Your puzzle answer was `x`.
+Your puzzle answer was `y`.
